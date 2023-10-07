@@ -1,31 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #eae7b1;
   font-family: "Lalezar", cursive;
 }
+
 header {
   color: #fff;
   width: 100vw;
-  height: 19vh;
+  height: 25vh;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   background-color: #3c6255;
 }
+
 #title {
   font-size: 96px;
   margin-bottom: -35px;
 }
+
 header p {
   font-size: 19px;
 }
-h2 {
+
+#title-denuncia {
   display: flex;
   font-size: 64px;
   margin-top: 58px;
@@ -33,6 +39,7 @@ h2 {
   justify-content: center;
   text-transform: uppercase;
 }
+
 main {
   gap: 30px;
   width: 100vw;
@@ -41,8 +48,8 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+
 .box-conteiner {
-  z-index: 1;
   display: flex;
   width: 1292px;
   height: 655px;
@@ -52,19 +59,19 @@ main {
   justify-content: center;
   background: rgba(60, 98, 85, 0.199);
 }
+
 img {
   padding: 18px 0 18px 36px;
 }
+
 .box-conteiner-item {
-  display: grid;
-  grid-column: 1fr 1fr;
   width: 501px;
   height: 106px;
   display: flex;
   align-items: center;
   background-color: #3c6255;
-  z-index: 2;
 }
+
 .section {
   justify-content: center;
   gap: 50px;
@@ -86,11 +93,13 @@ img {
   align-items: center;
   justify-content: center;
 }
+
 .denucia-1 {
   gap: 30px;
   display: flex;
   flex-direction: column;
 }
+
 .filho {
   height: 545px;
   width: 539px;
@@ -98,21 +107,25 @@ img {
   justify-content: end;
   display: flex;
 }
+
 .caixa {
   display: flex;
   gap: 40px;
 }
+
 .caixa-pai {
   justify-content: center;
   align-items: center;
   display: flex;
 }
+
 .input {
   width: 483px;
   height: 52px;
   background-color: #cee1b7;
   border-radius: 15px;
 }
+
 .caixa-2 {
   display: flex;
   gap: 200px;
@@ -120,6 +133,7 @@ img {
   margin-top: 100px;
   margin-left: 500px;
 }
+
 /* CSS LAURA */
 .email {
   flex-direction: column;
@@ -130,6 +144,7 @@ img {
   padding-left: 13px;
   outline: none;
 }
+
 .senha {
   width: 300px;
   height: 40px;
@@ -138,6 +153,7 @@ img {
   padding-left: 13px;
   outline: none;
 }
+
 .btn {
   width: 120px;
   height: 33px;
@@ -146,6 +162,7 @@ img {
   background-color: #3c6255;
   color: #ffff;
 }
+
 .container {
   display: flex;
   flex-direction: row;
@@ -161,4 +178,52 @@ img {
   align-items: center;
   justify-content: center;
   gap: 50px;
+}
+
+/* RESPONSIVIDADE LAVÍNIA */
+
+@media (max-width: 768px) {
+
+  header #title{
+    font-size: 50px;
+    margin-bottom: -10px;
+  }
+  .section,
+  .box-conteiner {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 350px) {
+
+  header #title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    height: 70px;
+  }
+
+  header p{
+    font-size: 13px;
+    text-align: justify;
+  }
+
+  #title-denuncia{
+    font-size: 40px;
+  }
+  
+  .box-conteiner-item{
+    width: 250px;
+    height: 150px;
+  }
+
+  .box-conteiner-item span{
+    display: none;
+  }
+
+  .section,
+  .box-conteiner {
+    max-width: 350px;
+  }
 }
