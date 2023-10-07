@@ -10,7 +10,7 @@ body {
 }
 header {
   color: #fff;
-  width: 100%;
+  width: 100vw;
   height: 19vh;
   display: flex;
   text-align: center;
