@@ -8,7 +8,7 @@ router.get("/cadastro", (request, response) =>{
   return response.render("templates/cadastro")
 });
 router.get("/denuncias/visualizar", (request, response) => {
-  return response.render("templates/home");
+  return response.render("templates/view-denuncia");
 });
 router.get("/user/adddenuncia/addinfo", (request, response) => {
   return response.render("templates/add_denuncia");
