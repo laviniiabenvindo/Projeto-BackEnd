@@ -1,18 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (request, response) => {
-  return response.render("templates/pagina-inicial");
-});
-router.get("/cadastro", (request, response) =>{
-  return response.render("templates/cadastro")
-});
-router.get("/denuncias/visualizar", (request, response) => {
-  return response.render("templates/view-denuncia");
-});
-router.get("/user/adddenuncia/addinfo", (request, response) => {
-  return response.render("templates/add_denuncia");
-});
+const routerController = require("../controllers/routerControllers");
 
+router.get("/", routerController.home);
+router.get("/cadastro", routerController.cadastro);
+router.get("/denuncias/visualizar", routerController.viewDenuncia);
+router.get("/user/adddenuncia/addinfo", routerController.addDenuncia);
 
 module.exports = router;
