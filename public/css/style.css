@@ -170,7 +170,7 @@ img {
   margin-top: 2rem;
 }
 
-#form{
+#form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,7 +178,7 @@ img {
   margin: 3rem;
 }
 
- .form_parte1 {
+.form_parte1 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -195,7 +195,8 @@ img {
   margin-top: 3rem;
 }
 
-.form_parte2, .form_parte1 label {
+.form_parte2,
+.form_parte1 label {
   color: rgba(0, 0, 0, 0.48);
   font-size: 20px;
   margin-left: 1rem;
@@ -240,8 +241,101 @@ img {
   height: 62px;
 }
 
+.user-box {
+  padding: 2rem;
+  border-top: #2a5f4d solid 3px;
+  border-left: #2a5f4d solid 1px;
+  border-right: #2a5f4d solid 1px;
+  border-bottom: #2a5f4d solid 0.5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #a6bb8d;
+  width: auto;
+  height: auto;
+  margin-right: 3rem;
+}
+
+#profile-icon {
+  font-size: 150px;
+}
+
+.chat-btn,
+.add-report {
+  background: none;
+  border: none;
+}
+
+.add-report:hover {
+  cursor: pointer;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.add-report {
+  color: #003f2a;
+  font-size: 50px;
+  text-decoration: none;
+  text-align: center;
+}
+
+#add-icon {
+  font-size: 150px;
+  color: black;
+}
+
+#Chat-icon {
+  color: #fff;
+  font-size: 40px;
+}
+
+#Chat-icon:hover {
+  transition: 2s;
+  color: #3c6255;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.tudo {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input-control {
+  margin: 2rem;
+}
+
+.rua-do-user-display,
+.nome-do-user-display,
+.email-do-user-display {
+  padding: 5%;
+  width: 334px;
+  max-width: 400px;
+  height: 45px;
+  border-radius: 50px;
+}
+
+.report-area {
+  padding-top: 25%;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.5;
+  background-color: #3c6255;
+  width: 705px;
+  height: 777px;
+  /* filter: blur(17.5px); */
+}
+
 @media (max-width: 1000px) {
-  #form{
+  #form {
     flex-direction: column;
     gap: 2rem;
     margin: 1rem;
@@ -304,5 +398,33 @@ img {
   .section,
   .box-conteiner {
     max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tudo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-box {
+    margin-bottom: 30px;
+  }
+  #add-icon {
+    position: absolute;
+    transform: translate(-50%, -300%);
+  }
+}
+
+/* RESPONSIVIDADE DA LAURA */
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formulario {
+    max-width: 100%;
   }
 }

@@ -19,4 +19,10 @@ module.exports = class routerController {
   static async addDenuncia(request, response) {
     return response.render("templates/add_denuncia");
   }
+  static async postarDenny(request, response) {
+    return response.render("templates/postar_denny");
+  }
+  static async verpostagens(request, response) {
+    return response.render("templates/verpostagens");
+  }
 };
