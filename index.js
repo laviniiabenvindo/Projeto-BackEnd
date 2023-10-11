@@ -16,8 +16,18 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
 //EXPORTANDO OS MODELS
-const User = require("./models/User");
+const Usuario = require("./models/Usuario");
+const Comunidade = require("./models/Comunidade");
+const Telefone = require("./models/Telefone");
+const Endereco = require("./models/Endereco");
+const Indicadores = require("./models/Indicadores");
+const Denuncia = require("./models/Denuncia");
+const Dados = require("./models/Dados");
 
-app.listen(port, () => {
-  console.log(`http://localhost:${port}`);
-});
+conn
+  .sync()
+  .then(() => {
+    app.listen(port);
+  })
+  .catch((err) => console.log(err));
+// {force:true}
