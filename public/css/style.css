@@ -75,6 +75,7 @@ img {
 
 /* CSS JACÓ */
 
+
 .prt-1 {
   opacity: 0.6;
   background-color: #3c6255;
@@ -85,19 +86,55 @@ img {
   align-items: center;
   justify-content: center;
 }
+hr{
+  width: 500px;
+}
+.prt-1 button {
+  background-color: #c6d7b1;
+  color: #3c6255;
+  border-radius: 20px;
+  border: transparent;
+}
+.prt-1 i {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.caixa-upload > input {
+  display: none;
+}
+.pt2 {
+  justify-content: center;
+  display: flex;
+  margin-left: 30px;
+  flex-direction: column;
+}
+.button-denúncia button {
+  margin-top: 20px;
+  margin-left: 5.6rem;
+  width: 345px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  height: 62px;
+  border-radius: 100px;
+  background: #61876e;
+}
 .denucia-1 {
   gap: 30px;
   display: flex;
   flex-direction: column;
 }
 .filho {
+  margin-top: -190px;
   height: 545px;
   width: 539px;
+
   background-color: #c6d7b1;
   justify-content: end;
   display: flex;
 }
 .caixa {
+  /* filter: blur(17.5px); */
   display: flex;
   gap: 40px;
 }
@@ -107,12 +144,17 @@ img {
   display: flex;
 }
 .input {
+  margin-left: 39px;
+  margin-top: -40px;
   width: 483px;
   height: 52px;
   background-color: #cee1b7;
   border-radius: 15px;
 }
+
 .caixa-2 {
+  justify-content: center;
+  align-items: center;
   display: flex;
   gap: 200px;
   flex-direction: column;
