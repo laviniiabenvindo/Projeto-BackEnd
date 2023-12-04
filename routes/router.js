@@ -10,6 +10,7 @@ router.get("/denuncias/visualizar", routerController.viewDenuncia);
 router.get("/user/adddenuncia/addinfo", routerController.addDenuncia);
 router.get("/user/adddenuncia", routerController.postarDenny)
 router.get("/user/verdenuncia", routerController.verpostagens)
+router.get("/home", routerController.selecOptions)
 
 
 module.exports = router;

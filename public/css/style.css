@@ -446,6 +446,51 @@ hr{
   /* filter: blur(17.5px); */
 }
 
+/* selecOptions CSS */
+
+.text{
+  margin-bottom: 5rem;
+  text-align: center
+}
+
+.icons-container{
+  border-radius: 9px;
+  padding: 70px;
+  background-color: #8ea581;
+  text-align: center;
+  text-decoration:none;
+}
+
+.icons-container h4{
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+.icons-container:hover{
+  border-radius: 9px;
+  padding: 70px;
+  background-color: #8ea581;
+  opacity: 0.5;
+  cursor:pointer;
+}
+
+.section{
+  gap: 5rem;
+  display: flex;
+}
+
+.icons {
+  font-size: larger;
+  color: white;
+}
+
+.select{
+  color: #8ea581;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+  1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  
+}
+
 /* Responsividade Alana */
 
 

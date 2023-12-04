@@ -113,7 +113,7 @@ module.exports = class routerController {
       request.flash("message", "Cadastro Realizado com sucesso");
 
       request.session.save(() => {
-        response.redirect("/");
+        response.redirect("/home");
       });
     } catch (error) {
       console.log(error);
@@ -131,5 +131,8 @@ module.exports = class routerController {
   }
   static async verpostagens(request, response) {
     return response.render("templates/verpostagens");
+  }
+  static async selecOptions(request, response) {
+    return response.render("templates/selecOptions")
   }
 };
