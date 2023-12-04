@@ -1,8 +1,6 @@
 const { DataTypes } = require("sequelize");
 const db = require("../db/conn");
 
-const User = require("./Usuario");
-
 const Comunidade = require("./Comunidade");
 
 const Endereco = db.define("tb_endereco", {
@@ -38,9 +36,8 @@ const Endereco = db.define("tb_endereco", {
   },
 });
 
-// Um usuario pra um endereco
-User.hasOne(Endereco);
-Endereco.belongsTo(User);
+
+
 
 // // Um endereco pra uma comunidade
 // Endereco.hasMany(Comunidade);

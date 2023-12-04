@@ -4,7 +4,8 @@ const router = express.Router();
 const routerController = require("../controllers/routerControllers");
 
 router.get("/", routerController.home);
-router.get("/cadastro", routerController.cadastro);
+router.get("/cadastro", routerController.cadastroPessoal);
+router.post("/cadastro", routerController.cadastroPessoalPost);
 router.get("/denuncias/visualizar", routerController.viewDenuncia);
 router.get("/user/adddenuncia/addinfo", routerController.addDenuncia);
 router.get("/user/adddenuncia", routerController.postarDenny)

@@ -8,23 +8,92 @@ body {
   background-color: #eae7b1;
   font-family: "Lalezar", cursive;
 }
+
 header {
-  color: #fff;
-  width: 100vw;
-  height: 25vh;
   display: flex;
-  text-align: center;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #3c6255;
+  background: #3C6255;
+  color: #fff;
+  text-align: center;
+  padding: .5rem;
+  width: 100%;
 }
-#title {
-  font-size: 96px;
-  margin-bottom: -35px;
+
+.navbar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-header p {
-  font-size: 19px;
+
+nav {
+  background: rgba(97, 135, 110, 0.50);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: .8rem;
+  width: 100%;
 }
+
+.flash-message {
+  margin: 2rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #89ab95;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login_entrar, .funcoes {
+  display: flex;
+  gap: 20px;
+}
+
+.login_entrar a, .funcoes a {
+  text-decoration: none;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 24px;
+}
+
+.linha {
+  width: 589px;
+  height: 1px;
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .login_entrar, .funcoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .linha{
+    width: 100%;
+  }
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.title {
+  text-align: center;
+  color: rgba(15, 15, 15, 0.582);
+  font-size: 40px;
+  margin-top: 2rem;
+}
+
 h2 {
   display: flex;
   font-size: 64px;
@@ -35,7 +104,6 @@ h2 {
 }
 main {
   gap: 30px;
-  width: 100vw;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -205,11 +273,12 @@ hr{
 }
 
 /* CSS Alana */
-.title {
+.title-form {
   text-align: center;
   color: rgba(15, 15, 15, 0.582);
   font-size: 40px;
   margin-top: 2rem;
+  
 }
 
 #form {
@@ -217,7 +286,12 @@ hr{
   align-items: center;
   justify-content: center;
   gap: 10rem;
-  margin: 3rem;
+  margin: 1rem;
+  margin-bottom: 3rem;
+  background-color: rgba(97, 135, 110, 0.50);
+  padding: 1rem;
+  border-radius: 23px;
+  border-top: 2px solid rgba(60, 98, 85, 0.50);
 }
 
 .form_parte1 {
@@ -232,19 +306,8 @@ hr{
   gap: 1rem;
 }
 
-#cadastrar {
-  margin: 0 auto;
-  margin-top: 3rem;
-}
-
-.form_parte2,
+.form_parte2 label,
 .form_parte1 label {
-  color: rgba(0, 0, 0, 0.48);
-  font-size: 20px;
-  margin-left: 1rem;
-}
-
-.form_parte2 label {
   color: rgba(0, 0, 0, 0.48);
   font-size: 20px;
   margin-left: 1rem;
@@ -257,7 +320,7 @@ hr{
   height: 62px;
   border-radius: 10rem;
   border: none;
-  color: rgba(0, 0, 0, 0.48);
+  color: #000;
   font-size: 20px;
 }
 
@@ -268,20 +331,27 @@ hr{
   height: 62px;
   border-radius: 10rem;
   border: none;
-  color: rgba(0, 0, 0, 0.48);
+  color: #000;
   font-size: 20px;
 }
 
-#cadastrar {
-  color: #fff;
-  background: #61876e;
+.cadastrar{
+  background: #61876E;
+  color: white;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   width: 345px;
   height: 62px;
+  border-radius: 10rem;
+  border: none;
+  margin: 0 auto;
+  margin-top: 3rem;
+  cursor: pointer;
 }
+
+
 
 .user-box {
   padding: 2rem;
@@ -376,6 +446,9 @@ hr{
   /* filter: blur(17.5px); */
 }
 
+/* Responsividade Alana */
+
+
 @media (max-width: 1000px) {
   #form {
     flex-direction: column;
@@ -386,24 +459,26 @@ hr{
 }
 
 @media (max-width: 480px) {
-  .title {
+  .title-form {
     font-size: 28px;
   }
 
+
   .form_parte1 input,
   .form_parte2 input,
-  #cadastrar {
-    width: 300px;
+  .cadastrar {
+   max-width: 300px; 
   }
+
 }
 
 /* RESPONSIVIDADE LAVÍNIA */
 
 @media (max-width: 768px) {
-  header #title {
+  /* header #title {
     font-size: 50px;
     margin-bottom: -10px;
-  }
+  } */
   .section,
   .box-conteiner {
     max-width: 768px;
@@ -411,7 +486,7 @@ hr{
 }
 
 @media (max-width: 350px) {
-  header #title {
+  /* header #title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -422,7 +497,7 @@ hr{
   header p {
     font-size: 13px;
     text-align: justify;
-  }
+  } */
 
   #title-denuncia {
     font-size: 40px;
