@@ -58,7 +58,7 @@ app.use((request, response, next) => {
   next();
 });
 
-app.use("/", routerController);
+app.use("/", routerController.home);
 
 conn.sync()
   .then(() => {
