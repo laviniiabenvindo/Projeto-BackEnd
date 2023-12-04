@@ -57,6 +57,7 @@ nav {
   align-items: center;
   gap: .5rem;
   font-size: 24px;
+  margin: 1rem;
 }
 
 .linha {
@@ -449,7 +450,7 @@ hr{
 /* selecOptions CSS */
 
 .text{
-  margin-bottom: 5rem;
+  margin: 2rem;
   text-align: center
 }
 
@@ -462,7 +463,6 @@ hr{
 }
 
 .icons-container h4{
-  margin-top: 4px;
   text-decoration: none;
 }
 
@@ -474,9 +474,9 @@ hr{
   cursor:pointer;
 }
 
-.section{
-  gap: 5rem;
+.container-icon{
   display: flex;
+  gap: 5rem;
 }
 
 .icons {
@@ -489,6 +489,15 @@ hr{
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
   1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   
+}
+
+@media (max-width: 480px) {
+  .container-icon{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
 }
 
 /* Responsividade Alana */

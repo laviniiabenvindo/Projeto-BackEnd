@@ -9,8 +9,8 @@ const Dados = require("../models/Dados");
 const bcrypt = require("bcryptjs");
 
 module.exports = class routerController {
-  static async home(request, response) {
-    return response.render("templates/pagina-inicial");
+  static async login(request, response) {
+    return response.render("templates/login");
   }
   static async cadastroPessoal(request, response) {
     return response.render("templates/cadastro");
@@ -35,7 +35,6 @@ module.exports = class routerController {
       complemento,
     } = request.body;
 
-    
     if (email != confirmarEmail) {
       request.flash("message", "Os E-mails não conferem, tente novamente");
       response.render("templates/cadastro");
@@ -75,7 +74,6 @@ module.exports = class routerController {
       response.render("templates/cadastro");
       return;
     }
-
 
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(senha, salt);
@@ -120,10 +118,36 @@ module.exports = class routerController {
     }
   }
 
+  static async loginPost(request, response) {
+    const { email, senha } = request.body;
+
+    const user = await Usuario.findOne({ where: { email: email } });
+
+    if (!user) {
+      request.flash("message", "Usuário não encontrado");
+      return response.render("templates/login");
+    }
+
+    request.session.usuarioId = user.id;
+
+    request.flash("message", `Seja bem-vindo ${user.nome}`); // Corrigido de user.name para user.nome
+    request.session.save(() => {
+      return response.redirect("/home");
+    });
+  }
+
   static async viewDenuncia(request, response) {
     return response.render("templates/view-denuncia");
   }
+  
   static async addDenuncia(request, response) {
+
+    // const id = request.params.id;
+
+    // const denuncia = await Usuario.findOne({ where: { id: id }, raw: true });
+
+    // console.log(denuncia);
+
     return response.render("templates/add_denuncia");
   }
   static async postarDenny(request, response) {
@@ -133,6 +157,6 @@ module.exports = class routerController {
     return response.render("templates/verpostagens");
   }
   static async selecOptions(request, response) {
-    return response.render("templates/selecOptions")
+    return response.render("templates/selecOptions");
   }
 };
