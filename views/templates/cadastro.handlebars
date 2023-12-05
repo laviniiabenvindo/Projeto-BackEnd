@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Verifica se a string de telefone tem algum conteúdo
     if (telefone.length > 0) {
-      // Formato para telefones com até 11 dígitos (XX) XXXX-XXXX
+      // Formato para telefones com até 12 dígitos (XX) XXXX-XXXX
       if (telefone.length <= 12) {
         telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
       } 
