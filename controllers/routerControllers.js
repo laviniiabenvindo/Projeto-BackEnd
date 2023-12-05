@@ -79,7 +79,6 @@ module.exports = class routerController {
     const hashedPassword = bcrypt.hashSync(senha, salt);
 
     try {
-      // Create endereco entry
       const endereco = await Endereco.create({
         cep,
         rua,
@@ -93,7 +92,7 @@ module.exports = class routerController {
         nm_telefone,
       });
 
-      // Create usuario entry with enderecoId
+      
       const createUser = await Usuario.create({
         nome,
         sobrenome,
@@ -130,7 +129,7 @@ module.exports = class routerController {
 
     request.session.usuarioId = user.id;
 
-    request.flash("message", `Seja bem-vindo ${user.nome}`); // Corrigido de user.name para user.nome
+    request.flash("message", `Seja bem-vindo ${user.nome}`); 
     request.session.save(() => {
       return response.redirect("/home");
     });
