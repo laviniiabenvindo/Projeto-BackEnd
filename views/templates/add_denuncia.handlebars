@@ -3,16 +3,17 @@
 
     <article class="denucia-1">
       <div class="prt-1">
-         <div class="caixa-upload">
+        <div class="caixa-upload">
           <label for="file-input">
             <i class="bi bi-plus-circle"></i>
           </label>
           <input type="file" name="" id="file-input" class="up-img">
         </div>
-        <p>Adicionar denúncia</p></div>
+        <p>Adicionar denúncia</p>
+      </div>
 
       <div class="prt-1">
-         <div class="caixa-upload">
+        <div class="caixa-upload">
           <label for="file-input">
             <i class="bi bi-plus-circle"></i>
           </label>
@@ -31,18 +32,18 @@
           </label>
           <input type="file" name="" id="file-input" class="up-img">
         </div>
-        
+
         <p>Adicionar denúncia</p>
       </div>
 
       <div class="prt-1">
         <div class="caixa-upload">
           <label for="file-input">
-           <i class="bi bi-plus-circle"></i>
+            <i class="bi bi-plus-circle"></i>
           </label>
           <input type="file" name="" id="file-input" class="up-img">
         </div>
-        
+
         <p>Adicionar denúncia</p>
       </div>
 
@@ -51,15 +52,18 @@
   </section>
 
   <section class="caixa-2">
-    <div>
-      <input class="input" type="text" />
+    <div class="subBox-2">
+      <label class="ocorrenciaTitulo" for="">Título da ocorrência</label>
+      <input class="input" type="text" placeholder="Ex:Problemas na infiltração..../ excesso de lixo..." />
     </div>
     <article class="pt2">
-      <div class="filho"></div>
-      <div class="button-denúncia"><button>Postar Denúncia</button></div>
-      </article>
-      
-    
+      <label class="ocorrenciaTitulo" for="">Descrição da ocorrência</label>
+      <form action="/user/adddenuncia/addinfo" method="post">
+        <textarea name="descricao" class="filho" placeholder="Exemplo:
+        Postada no dia xx/xx/xxxx
+        Nós da cidade/bairro/vila  estamos sofrendo com o excesso/falta de etc, etc, etc..."></textarea>
+        <div class="button-denúncia"><button type="submit">Postar Denúncia</button></div>
+      </form>
+    </article>
   </section>
 </section>
-
