@@ -7,6 +7,9 @@ const Denuncia = db.define("tb_denuncia", {
     allowNull: false,
     require: true,
   },
+  imagePath: {
+    type: DataTypes.BLOB,
+  },
 });
 
 module.exports = Denuncia;

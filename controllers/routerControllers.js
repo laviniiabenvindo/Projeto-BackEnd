@@ -149,10 +149,10 @@ module.exports = class routerController {
   }
   static async addDenunciaPost(request, response) {
     const { descricao } = request.body
-
     try {
       const denuncia = {
         descricao,
+
       }
       const createDenuncia = await Denuncia.create(denuncia);
 

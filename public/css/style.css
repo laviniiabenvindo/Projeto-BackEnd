@@ -155,7 +155,18 @@ img {
 }
 
 /* CSS JACÓ */
+.up-img{
+  display: none;
+}
 
+.picture {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  cursor: pointer;
+}
 
 .prt-1 {
   opacity: 0.6;
