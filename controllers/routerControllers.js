@@ -137,18 +137,30 @@ module.exports = class routerController {
   }
 
   static async viewDenuncia(request, response) {
-    return response.render("templates/view-denuncia");
+    try {
+      const show = await Denuncia.findAll({ raw: true });
+      return response.render("templates/view-denuncia", { show });
+    } catch (error) {
+      console.log(error);
+    }
   }
-  
+
   static async addDenuncia(request, response) {
-
-    // const id = request.params.id;
-
-    // const denuncia = await Usuario.findOne({ where: { id: id }, raw: true });
-
-    // console.log(denuncia);
-
     return response.render("templates/add_denuncia");
+  }
+  static async addDenunciaPost(request, response) {
+    const { descricao } = request.body
+
+    try {
+      const denuncia = {
+        descricao,
+      }
+      const createDenuncia = await Denuncia.create(denuncia);
+
+      response.redirect("/denuncias/visualizar");
+    } catch (error) {
+      console.log(error);
+    }
   }
   static async postarDenny(request, response) {
     return response.render("templates/postar_denny");
