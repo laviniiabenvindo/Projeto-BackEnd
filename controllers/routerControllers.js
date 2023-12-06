@@ -164,16 +164,24 @@ module.exports = class routerController {
   static async postarDenny(request, response) {
     return response.render("templates/postar_denny");
   }
+  
   static async verpostagens(request, response) {
-    const id = request.params.id
+    const id = request.params.id;
     try {
-      const showPost = await Denuncia.findOne({ where: { id: id }});
-      console.log(showPost)
-      return response.render("templates/verpostagens", { showPost });
+      const showPost = await Denuncia.findOne({ where: { id: id } });
+  
+      // Convertendo o objeto Sequelize para um objeto de dados simples - 
+      // o Handlebars não estava acessando a descrição no model das denuncias
+      const showPostPlain = showPost ? showPost.get({ plain: true }) : null;
+  
+      return response.render('templates/verpostagens', { showPost: showPostPlain });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
+  
+  
+
   static async selecOptions(request, response) {
     return response.render("templates/selecOptions");
   }

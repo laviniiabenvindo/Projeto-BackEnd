@@ -1,126 +1,115 @@
 <form action="/user/adddenuncia/addinfo" method="post">
 
-  <section class="caixa-pai">
+    <section class="caixa-pai">
 
-    <section class="caixa">
+      <section class="caixa">
 
-      <article class="denucia-1">
-        <div class="prt-1">
-          <div class="caixa-upload">
-            <label for="imagePath-1" class="picture">
-              <i class="bi bi-plus-circle"></i>
-              <span class="picture__image"></span>
-            </label>
-            <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-1" class="up-img">
-          </div>
-        </div>
-
-        <div class="prt-1">
-          <div class="caixa-upload">
-            <label for="imagePath-2" class="picture">
-              <i class="bi bi-plus-circle"></i>
-              <span class="picture__image"></span>
-            </label>
-            <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-2" class="up-img">
-          </div>
-        </div>
-
-      </article>
-
-      <article class="denucia-1">
-        <div class="prt-1">
-          <div class="caixa-upload">
-            <label for="imagePath-3" class="picture">
-              <i class="bi bi-plus-circle"></i>
-              <span class="picture__image"></span>
-            </label>
-            <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-3" class="up-img" >
+        <article class="denucia-1">
+          <div class="prt-1">
+            <div class="caixa-upload">
+              <label for="imagePath-1" class="picture">
+                <i class="bi bi-plus-circle picture__icon"></i>
+                <span class="picture__image">Adicionar denúncia</span>
+              </label>
+              <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-1" class="up-img">
+            </div>
           </div>
 
-        </div>
-
-        <div class="prt-1">
-          <div class="caixa-upload">
-            <label for="imagePath-4" class="picture">
-              <i class="bi bi-plus-circle"></i>
-              <span class="picture__image"></span>
-            </label>
-            <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-4" class="up-img">
+          <div class="prt-1">
+            <div class="caixa-upload">
+              <label for="imagePath-2" class="picture">
+                <i class="bi bi-plus-circle picture__icon"></i>
+                <span class="picture__image">Adicionar denúncia</span>
+              </label>
+              <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-2" class="up-img">
+            </div>
           </div>
-        </div>
 
-      </article>
+        </article>
+
+        <article class="denucia-1">
+          <div class="prt-1">
+            <div class="caixa-upload">
+              <label for="imagePath-3" class="picture">
+                <i class="bi bi-plus-circle picture__icon"></i>
+                <span class="picture__image">Adicionar denúncia</span>
+              </label>
+              <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-3" class="up-img">
+            </div>
+          </div>
+
+          <div class="prt-1">
+            <div class="caixa-upload">
+              <label for="imagePath-4" class="picture">
+                <i class="bi bi-plus-circle picture__icon"></i>
+                <span class="picture__image">Adicionar denúncia</span>
+              </label>
+              <input type="file" accept=".png, .jpeg" name="imagePath" id="imagePath-4" class="up-img">
+            </div>
+          </div>
+
+        </article>
+
+      </section>
+
+      <section class="caixa-2">
+        <div class="subBox-2">
+          <label class="ocorrenciaTitulo" for="">Título da ocorrência</label>
+          <input class="input" type="text" placeholder="Ex: Problemas na infiltração.../ excesso de lixo..." />
+        </div>
+        <article class="pt2">
+          <label class="ocorrenciaTitulo" for="">Descrição da ocorrência</label>
+          <textarea name="descricao" class="filho" placeholder="Exemplo: Postada no dia xx/xx/xxxx Nós da cidade/bairro/vila estamos sofrendo com o excesso/falta de etc, etc, etc..."></textarea>
+          <div class="button-denúncia"><button type="submit">Postar Denúncia</button></div>
+        </article>
+      </section>
 
     </section>
+  </form>
 
-    <section class="caixa-2">
-      <div class="subBox-2">
-        <label class="ocorrenciaTitulo" for="">Título da ocorrência</label>
-        <input class="input" type="text" placeholder="Ex:Problemas na infiltração..../ excesso de lixo..." />
-      </div>
-      <article class="pt2">
-        <label class="ocorrenciaTitulo" for="">Descrição da ocorrência</label>
-        <textarea name="descricao" class="filho" placeholder="Exemplo:
-        Postada no dia xx/xx/xxxx
-        Nós da cidade/bairro/vila estamos sofrendo com o excesso/falta de etc, etc, etc..."></textarea>
-        <div class="button-denúncia"><button type="submit">Postar Denúncia</button></div>
-      </article>
-    </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const inputFiles = document.querySelectorAll(".up-img");
+      const pictureImages = document.querySelectorAll(".picture__image");
+      const pictureIcon = document.querySelectorAll(".picture__icon");
+      const pictureImageTxt = "Adicionar denúncia";
 
-  </section>
+      inputFiles.forEach((inputFile, index) => {
+        inputFile.addEventListener("change", function (e) {
+          const inputTarget = e.target;
+          const file = inputTarget.files[0];
+          const pictureImage = pictureImages[index];
+          const icon = pictureIcon[index];
 
-  <!-- Áreas de pré-visualização de imagem -->
-  <div id="preview-container-1" style="display: none;">
-    <img id="preview-image-1" alt="Preview">
-  </div>
-  <div id="preview-container-2" style="display: none;">
-    <img id="preview-image-2" alt="Preview">
-  </div>
-  <div id="preview-container-3" style="display: none;">
-    <img id="preview-image-3" alt="Preview">
-  </div>
-  <div id="preview-container-4" style="display: none;">
-    <img id="preview-image-4" alt="Preview">
-  </div>
-</form>
+          if (!file) {
+            // Mostrar o conteúdo quando não há imagem
+            pictureImage.innerHTML = pictureImageTxt;
+            icon.style.display = "inline-block";
+          } else {
+            const reader = new FileReader();
 
-<script>
-  const inputFiles = document.querySelectorAll(".up-img");
-  const pictureImages = document.querySelectorAll(".picture__image");
-  const pictureImageTxt = "Adicionar denúncia";
-  pictureImages.innerHTML = pictureImageTxt;
+            reader.addEventListener("load", function (e) {
+              const readerTarget = e.target;
 
-  inputFiles.forEach((inputFile, index) => {
-    inputFile.addEventListener("change", function (e) {
-      const inputTarget = e.target;
-      const file = inputTarget.files[0];
-      const pictureImage = pictureImages[index];
+              const img = document.createElement("img");
+              img.src = readerTarget.result;
+              img.classList.add("picture__image");
 
-      if (!file) {
-       pictureImage.innerHTML = pictureImageTxt;
-      } else {
-         const reader = new FileReader();
+              pictureImage.innerHTML = "";
+              pictureImage.appendChild(img);
+              icon.style.display = "none";
+            });
 
-        reader.addEventListener("load", function (e) {
-          const readerTarget = e.target;
-
-          const img = document.createElement("img");
-          img.src = readerTarget.result;
-          img.classList.add("picture__img");
-
-          pictureImage.innerHTML = "";
-          pictureImage.appendChild(img);
+            reader.readAsDataURL(file);
+          }
         });
-
-        reader.readAsDataURL(file);
-        
-      }
+      });
     });
-  });
-</script>
+  </script>
+
 
 <style>
-  .picture__img{
-    max-width: 100%;
+  .picture__image{
+    max-width: 90%;
   }
 </style>
