@@ -165,7 +165,14 @@ module.exports = class routerController {
     return response.render("templates/postar_denny");
   }
   static async verpostagens(request, response) {
-    return response.render("templates/verpostagens");
+    const id = request.params.id
+    try {
+      const showPost = await Denuncia.findOne({ where: { id: id }});
+      console.log(showPost)
+      return response.render("templates/verpostagens", { showPost });
+    } catch (error) {
+      console.log(error);
+    }
   }
   static async selecOptions(request, response) {
     return response.render("templates/selecOptions");

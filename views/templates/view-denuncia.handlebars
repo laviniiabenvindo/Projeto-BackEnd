@@ -3,11 +3,13 @@
 </div>
 <section class="boxConteiner">
   {{#each show}}
-  <div class="box-conteiner-item">
-    <span>
-      <img src="/img/person.png" alt="" />
-    </span>
-    <p>{{this.descricao}}</p>
-  </div>
+ <a href="/user/verdenuncia/{{this.id}}">
+    <div class="box-conteiner-item">
+      <span>
+        <img src="/img/person.png" alt="" />
+      </span>
+      <p>{{this.descricao}}</p>
+    </div>
+  </a>
   {{/each}}
 </section>
