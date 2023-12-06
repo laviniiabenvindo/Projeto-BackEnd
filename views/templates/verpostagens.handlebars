@@ -1,9 +1,9 @@
 <section class="tudo">
-<div class="user-box">
-    <section class="user-profile"> 
-        <i id="profile-icon" class="bi bi-person-circle"></i>
-    </section>
-        
+    <div class="user-box">
+        <section class="user-profile">
+            <i id="profile-icon" class="bi bi-person-circle"></i>
+        </section>
+
         <div class="input-control">
             <input type="text" placeholder="Nome do user" class="nome-do-user-display">
         </div>
@@ -17,10 +17,11 @@
         <button class="chat-btn">
             <i id="Chat-icon" class="bi bi-chat-dots-fill"></i>
         </button>
-</div>
+    </div>
 
-<div class="report-area">
-    
-</div>
+    <div class="report-area">
+        {{#each showPost}}
+        <p>{{this.descricao}}</p>
+        {{/each }}
+    </div>
 </section>
-
